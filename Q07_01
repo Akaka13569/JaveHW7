@@ -1,0 +1,15 @@
+//Q1
+//請在每個靜態區塊與建構子內秀(SHOW)一段訊息，觀察這些訊息的出現順序。
+package CH07;
+
+public class Q07_01 {
+	static {System.out.println("A"); /* 此處為靜態區塊(static code block)A*/ }
+	Q07_01() {System.out.println("Q07_01");/* 此處為建構子*/}
+	static {System.out.println("B"); /* 此處為靜態區塊(static code block)B*/ }
+	public static void main(String[] args) {
+		Q07_01 con = new Q07_01();
+		System.out.println("HaHaHa");
+	}
+	static { System.out.println("C");/* 此處為靜態區塊(static code block)C*/ }
+	//順序為 A > B > C > Q07_01 > HaHaHa
+}
